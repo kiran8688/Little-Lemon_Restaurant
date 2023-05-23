@@ -6,7 +6,7 @@ function Card(props) {
     return (
         <>
             <article className='article-card'>
-                {(props.imgsrc === require("../assets/icons_assets/bruchetta.svg") ? <object width={300} aria-label='food' data={burchetta} type="image/svg+xml"></object> : <object width={300} height={200} aria-label='food' data={props.imgsrc} type="image/jpg"></object>)}
+                {(props.imgsrc === require("../assets/icons_assets/bruchetta.svg") ? <object  aria-label='food' data={burchetta} type="image/svg+xml"></object> : <object  aria-label='food' data={props.imgsrc} type="image/jpg"></object>)}
                 <div>
                     <h3>{props.title}</h3>
                     <h3>${props.price}</h3>
