@@ -3,8 +3,7 @@ import ReviewCard from './ReviewCard'
 
 function Testimonials() {
     return (
-        <>
-            <section className='testimonials-section'>
+            <section id='testimonials-section' className='testimonials-section'>
                 <h2>Testimonials</h2>
                 <article >
                     <ReviewCard imgsrc={require("../assets/icons_assets/Chaitanya_Anand.png")} name="Chaitanya A." review="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi esse est omnis. " />
@@ -19,7 +18,6 @@ function Testimonials() {
 
 
             </section>
-        </>
     )
 }
 

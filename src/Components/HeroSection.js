@@ -1,7 +1,12 @@
 import React from 'react'
-import ReserveTable from './ReserveTable'
+// import ReserveTable from './ReserveTable'
 
 function HeroSection() {
+
+  const buttonHandler = () =>{
+    
+  }
+
   return (
     <>
     <section className='hero-section'>
@@ -9,7 +14,7 @@ function HeroSection() {
             <h1>Little Lemon</h1>
             <h3>Chicago</h3>
             <p>We are family Owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-            <button type="submit" onClick={<ReserveTable/>}>Reserve a Table</button>
+            <button type="submit" onClick={buttonHandler}>Reserve a Table</button>
           </article>
           <img src={require("../assets/icons_assets/restauranfood.jpg")} alt="restaurant food" />
         </section>

@@ -4,7 +4,7 @@ import Card from './Card'
 function HighlightsSection() {
   return (
     <>
-      <section className='highlights-section'>
+      <section id='menu-section' className='highlights-section'>
         <h2>This week's specials!</h2>
         <button type="submit">Online Menu</button>
         <article>

@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
     <>
-      <section className='about-section'>
+      <section id='about-section' className='about-section'>
         <article>
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
