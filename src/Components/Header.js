@@ -1,9 +1,13 @@
 // import { useState } from "react"
 import React from 'react'
 import hamburgerIcon from "../assets/icons_assets/🦆 icon _hamburger menu_.svg"
+import { Link } from 'react-router-dom'
 function Header() {
 
-  const NavLinks = ['Home', 'About', 'Menu', 'Reservations', 'Testimonials']
+  const NavLinks = ['About', 'Menu', 'Testimonials']
+
+
+  
 
 
   const renderNavLinks = (links) =>{
@@ -71,8 +75,10 @@ function Header() {
         <img src={require('../assets/logos/Asset 16@4x.png')} width={200} alt='little-lemon logo' />
         <nav>
           <ul>
+            <li><Link to="/">Home</Link></li>
             {NavLinks.map(li => renderNavLinks(li))}
-            <li><a href='#login' onClick={('login')}>Login</a></li>
+            <li><Link to="/reservations">Reservations</Link> </li>
+            <li><Link to='/login'>Login</Link></li>
           </ul>
         </nav>
       </header>
