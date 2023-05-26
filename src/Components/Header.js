@@ -1,72 +1,54 @@
 // import { useState } from "react"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import hamburgerIcon from "../assets/icons_assets/🦆 icon _hamburger menu_.svg"
 import { Link } from 'react-router-dom'
 function Header() {
 
-  const NavLinks = ['About', 'Menu', 'Testimonials']
+  var path = window.location.pathname
+
+  const [pathRef, setPathRef] = useState(path)
+
+  var styl
+
+  if(path!=='/'){
+  styl=
+      {gridTemplateColumns: '1fr 1fr 1fr'}
+    
+  }else{
+    styl=
+      {gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr'}
+  }
 
 
+  const [NavLinks, setNavLinks] = useState(['About', 'Menu', 'Testimonials'])
+
+  useEffect(() => {
+
+    setPathRef(path)
+
+   const links = (path === '/') ? ['About', 'Menu', 'Testimonials'] : []
+   setNavLinks(links)
   
+  }, [NavLinks, path])
 
 
-  const renderNavLinks = (links) =>{
 
-    const linkHandler=()=>{
+
+
+  const renderNavLinks = (links) => {
+
+    const linkHandler = () => {
 
       const scroolToId = `${links.toLowerCase()}-section`
 
-      document.getElementById(scroolToId).scrollIntoView({behavior: "smooth", block:"center", inline:"nearest" })
+      document.getElementById(scroolToId).scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
     }
 
-    return(
-      <li key={links }><a onClick={()=>{linkHandler(links)}} aria-label='on Click'>{links}</a></li>
+    return (
+      <li key={links}><a href onClick={() => { linkHandler(links) }} aria-label='on Click'>{links}</a></li>
     )
 
   }
-  
-  // const [y, setY] = useState(window.scrollY);
-  // const [transformHeader, setTransformHeader] = useState("");
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-
-  //     const currY = window.scrollY
-  //     if (currY > y) {
-  //       setTransformHeader("translateY(-200px)");
-  //     } else if (currY < y) {
-  //       setTransformHeader("translateY(0)")
-  //     }
-  //     setY(currY);
-
-  //   }
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => { window.removeEventListener("scroll", handleScroll) }
-  // }, [y]);
-  
-  // const handleClick = (anchor) => () => {
-    //   const id = `${anchor}-section`;
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     element.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  //   }
-  // };
-
-    //  document.getElementById(className).scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start"
-    // })
-
-  // }
-    // if(element){
-    //   element.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "start"
-    //   })
-    // }
 
   return (
     <>
@@ -74,7 +56,8 @@ function Header() {
         <object width={20} height={20} aria-label='hamburger_icon' data={hamburgerIcon} type="image/svg+xml"></object>
         <img src={require('../assets/logos/Asset 16@4x.png')} width={200} alt='little-lemon logo' />
         <nav>
-          <ul>
+          
+          <ul style={styl}>
             <li><Link to="/">Home</Link></li>
             {NavLinks.map(li => renderNavLinks(li))}
             <li><Link to="/reservations">Reservations</Link> </li>

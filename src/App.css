@@ -5,19 +5,31 @@
   margin: 0;
 }
 
+html{
+  
+  overflow-y: visible;
+  overflow-x: visible;
+}
+
 
 body {
   display: grid;
   align-items: center;
+  scroll-behavior: smooth;
 }
 
 header {
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 1 );
   display: grid;
   grid-template-columns: 300px 800px;
-  grid-template-rows: 100px;
+  grid-template-rows: 80px;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  width: 100vw;
   /* margin-bottom: 1rem; */
 
 }
@@ -29,7 +41,7 @@ header {
 nav>ul {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
   column-gap: 2rem;
   justify-content: center;
 }
@@ -58,6 +70,7 @@ a:hover{
 /* -------------------Hero-section---------------------- */
 
 .hero-section {
+  
   background-color: #495e57;
   display: grid;
   justify-content: center;
@@ -66,7 +79,7 @@ a:hover{
   grid-template-rows: minmax(10rem, 25rem);
   column-gap: 7rem;
   border-radius: 25px;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0rem 1rem 1rem 1rem;
 }
 
 .hero-section>article {
@@ -83,26 +96,17 @@ h1 {
   color: #F4CE14;
 }
 
-h3 {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 0.7rem;
+
+.hero-section>article>h3{
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
 }
 
-h4{
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  /* padding-bottom: 0.7rem; */
-}
-
-p {
+.hero-section>article>p{
   font-family: 'Karla';
   font-style: normal;
   font-weight: 500;
@@ -111,6 +115,8 @@ p {
   line-height: 1.4rem;
   letter-spacing: 0.1rem;
 }
+
+
 
 button {
   background-color: #F4CE14;
@@ -126,6 +132,14 @@ button {
   box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
   cursor:pointer;
 }
+
+button:disabled{
+  background-color: #dfd672;
+  box-shadow: none;
+  /* pointer-events: none; */
+  cursor: not-allowed;
+}
+
 button:active{
 
   box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
@@ -430,6 +444,15 @@ text-transform: capitalize;
   justify-items: center;
 }
 
+.reservation-section>object{
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
 .reservation-section>article{
   /* grid-column: 5/ span 6; */
   grid-row: 1/ span 9;
@@ -460,6 +483,7 @@ fieldset>#input{
   border: #dfd672 solid 1px;
   border-bottom: none;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 

@@ -1,10 +1,12 @@
 import React from 'react'
+import homeIcon from '../assets/icons_assets/home icon.svg'
 
 function ReserveTable() {
 
   return (
     <>
       <section className='reservation-section'>
+        {/* <object width={50} height={50} data={homeIcon} aria-label='home_icon' type="image/svg+xml"></object> */}
         <article>
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
@@ -16,7 +18,7 @@ function ReserveTable() {
               <label htmlFor='date' className='input-label'>
                 Date
               </label>
-              <input type='date' name='date' id='date'/>
+              <input type='date' name='date' id='date'></input>
               </div>
 
               <div id='input'>
@@ -63,14 +65,14 @@ function ReserveTable() {
                 <legend>Select dining options</legend>
 
                 <div>
-                  <label htmlFor="standard">Standard</label>
-                  <input type="radio" id="standard" name="dining" value="standard"
-                    checked />
+                  <label htmlFor="standard">Standard
+                  </label>
+                  <input type="radio" name="standard" id="standard" value='standard'></input>
                 </div>
-
                 <div>
-                  <label htmlFor="outside">Outside</label>
-                  <input type="radio" id="outside" name="dining" value="outside" />
+                  <label htmlFor="outside">Outside
+                  </label>
+                  <input type="radio" name="outside" id="outside" value='outside'></input>
                 </div>
               </fieldset>
             </fieldset>
