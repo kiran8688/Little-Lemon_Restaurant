@@ -1,5 +1,5 @@
 import React from 'react'
-import homeIcon from '../assets/icons_assets/home icon.svg'
+// import homeIcon from '../assets/icons_assets/home icon.svg'
 
 function ReserveTable() {
 

@@ -10,7 +10,7 @@ function Header() {
 
   var styl
 
-  if(path!=='/'){
+  if(pathRef!=='/'){
   styl=
       {gridTemplateColumns: '1fr 1fr 1fr'}
     
