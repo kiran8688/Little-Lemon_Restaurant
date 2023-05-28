@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReactDatePicker from 'react-datepicker';
 import { Link } from 'react-router-dom';
+
+import 'react-datepicker/dist/react-datepicker.css';
 // import homeIcon from '../assets/icons_assets/home icon.svg'
 
 function ReserveTable() {
+
+  const [date, setDate] = useState(null)
 
   const radioHandler = (checkedval) => {
     (checkedval === 'standard') ? document.getElementById('standard').checked = true : (document.getElementById('standard').checked = false);
@@ -25,11 +30,17 @@ function ReserveTable() {
               <legend align="center">Table reservation Information </legend>
 
               <div id='input'>
-                <label htmlFor='date' className='input-label'>
+                <label htmlFor='date' id='date' className='input-label'>
                   Date
                 </label>
-                <input type='date' name='date' id='date' required ></input>
-              </div>
+                <ReactDatePicker 
+                selected={date} 
+                onChange={date =>setDate(date)} 
+                minDate={new Date()} 
+                placeholderText='dd-mm-yyyy'
+                dateFormat={'dd/MMMM/yyyy'}
+                id='react-datepicker'  />
+              </div> 
 
               <div id='input'>
 

@@ -63,14 +63,14 @@ function Header() {
         <nav className={classChange}>
           <ul style={styl}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={()=>setHamClick(false)}>Home</Link>
             </li>
             {NavLinks.map((li) => renderNavLinks(li))}
             <li>
-              <Link to="/reservations">Reservations</Link>
+              <Link to="/reservations" onClick={()=>setHamClick(false)}>Reservations</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login" onClick={()=>setHamClick(false)}>Login</Link>
             </li>
           </ul>
         </nav>

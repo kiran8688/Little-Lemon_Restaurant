@@ -151,7 +151,6 @@ button {
 button:disabled {
   background-color:#F4CE14;
   box-shadow: none;
-  /* pointer-events: none; */
   color: rgba(0, 0, 0, 0.3);
   cursor: not-allowed;
 }
@@ -516,6 +515,7 @@ fieldset>#input {
   font-size: 1.2rem;
 }
 
+
 #input>input,
 #input>select {
   border-radius: 8px;
@@ -526,8 +526,19 @@ fieldset>#input {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+#react-datepicker{
+  width: 86%;
+  height: 2.3rem;
+  border-radius: 8px;
+  border: none;
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 #input>input:active, #input>select:focus{
-  border: #F4CE14 solid 2px;;
+  border: #F4CE14 solid 2px;
+  
+
 }
 
 form>a {
@@ -1302,6 +1313,16 @@ legend[align=center] {
     font-size: 1.2rem;
   }
   
+  #react-datepicker{
+    width: 86%;
+    max-width: 60vw;
+    height: 2.3rem;
+    border-radius: 8px;
+    border: none;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
   #input>input,
   #input>select {
     border-radius: 8px;
@@ -1348,6 +1369,7 @@ form>a:hover{
   .reservation-section>article>form>fieldset>fieldset{
     border-radius: 16px;
     padding-top: 1.5rem;
+    height: 80%;
   }
   .reservation-section>article>form>fieldset>fieldset>legend{
     margin-left: 2rem;
@@ -2095,6 +2117,15 @@ legend[align=center] {
     grid-template-rows: 0.5fr 1fr;
     font-size: 1.2rem;
   }
+
+  #react-datepicker{
+    width: 80%;
+    height: 2.3rem;
+    border-radius: 8px;
+    border: none;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
   
   #input>input,
   #input>select {
@@ -2265,6 +2296,20 @@ legend[align=center] {
 
 }
 
+
+@media (max-width: 375px) {
+  #react-datepicker{
+    width: 76%;
+    height: 2.3rem;
+    border-radius: 8px;
+    border: none;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+
+
 @media (max-width:320px) {
   
 .reservation-section {
@@ -2327,6 +2372,14 @@ fieldset>#input {
   grid-template-rows: 0.5fr 0.8fr;
   font-size: 1rem;
   margin: 0 1rem;
+}
+#react-datepicker{
+  width: 75%;
+  height: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #input>input,
