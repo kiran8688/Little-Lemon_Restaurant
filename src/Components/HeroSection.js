@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 
 function HeroSection() {
 
-  const buttonHandler = () =>{
-    
-  }
-
   return (
     <>
     <section className='hero-section'>
