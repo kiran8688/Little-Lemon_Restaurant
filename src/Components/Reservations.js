@@ -64,7 +64,18 @@ function ReserveTable() {
                 <label htmlFor='number' className='input-label'>
                   Number of Diners
                 </label>
-                <input type='number' min={1} max={10} defaultValue={4} autoComplete="off" name='diners' id='diners' placeholder='' ></input>
+                <select defaultValue={4} autoComplete="off" name='diners' id='diners' placeholder='' >
+                  <option value="1">1 member</option>
+                  <option value="2">2 members</option>
+                  <option value="3">3 members</option>
+                  <option value="4">4 members</option>
+                  <option value="5">5 members</option>
+                  <option value="6">6 members</option>
+                  <option value="7">7 members</option>
+                  <option value="8">8 members</option>
+                  <option value="9">9 members</option>
+                  <option value="10">10 members</option>
+                </select>
               </div>
 
               <div id='input'>

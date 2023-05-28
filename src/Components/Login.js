@@ -26,7 +26,7 @@ function Login() {
                 <input type='password' min={3} autoComplete="off" name='password' id='password' placeholder='Enter Password' ></input>
               </div>
             </fieldset>
-            <Link type='submit' to='personal-information' >Enter Personal Details</Link>
+            <Link type='submit' to='personal-information' >Submit</Link>
           </form>
         </article>
 

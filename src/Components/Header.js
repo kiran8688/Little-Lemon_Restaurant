@@ -43,8 +43,8 @@ function Header() {
     };
 
     return (
-      <li key={links}>
-        <a href={`#${links}`} onClick={linkHandler} aria-label="on Click">
+      <li key={links} onClick={linkHandler}>
+        <a href={`#${links}`}  aria-label="on Click">
           {links}
         </a>
       </li>
@@ -66,10 +66,10 @@ function Header() {
               <Link to="/" onClick={()=>setHamClick(false)}>Home</Link>
             </li>
             {NavLinks.map((li) => renderNavLinks(li))}
-            <li>
+            <li component={Link} to='/reservations'>
               <Link to="/reservations" onClick={()=>setHamClick(false)}>Reservations</Link>
             </li>
-            <li>
+            <li component={Link} to='/login'>
               <Link to="/login" onClick={()=>setHamClick(false)}>Login</Link>
             </li>
           </ul>
