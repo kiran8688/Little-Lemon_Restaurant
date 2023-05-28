@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import ReserveTable from './ReserveTable'
 
 function HeroSection() {
@@ -14,7 +15,7 @@ function HeroSection() {
             <h1>Little Lemon</h1>
             <h3>Chicago</h3>
             <p>We are family Owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-            <button type="submit" onClick={buttonHandler}>Reserve a Table</button>
+            <Link type="submit" role='button' to={'/reservations'}>Reserve a Table</Link>
           </article>
           <img src={require("../assets/icons_assets/restauranfood.jpg")} alt="restaurant food" />
         </section>

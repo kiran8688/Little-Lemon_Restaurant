@@ -1,8 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  /* box-sizing: border-box; */
 }
-
 
 body {
   display: grid;
@@ -14,23 +14,24 @@ header {
   position: sticky;
   top: 0%;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.9);
   display: grid;
   grid-template-columns: 300px 800px;
   grid-template-rows: 80px;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  width: 100vw;
+  /* margin-bottom: 5rem; */
+  /* width: 100vw; */
   /* margin-bottom: 1rem; */
 
 }
 
-[aria-label=hamburger_icon] {
+.hamburger {
   display: none;
 }
 
-nav>ul {
+.navbar>ul {
   list-style: none;
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
@@ -38,12 +39,12 @@ nav>ul {
   justify-content: center;
 }
 
-nav>ul>li {
+.navbar>ul>li {
   display: flex;
   justify-content: center;
 }
 
-a {
+li>a {
   text-decoration: none;
   color: #495e57;
   font-family: 'Karla';
@@ -109,7 +110,28 @@ h1 {
   letter-spacing: 0.1rem;
 }
 
+.hero-section>article>a{
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  
+  padding: 1rem 0.1rem;
+  margin-right: 5rem;
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
 
+.hero-section>article>a:active{
+  box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
+
+}
 
 button {
   background-color: #F4CE14;
@@ -127,9 +149,10 @@ button {
 }
 
 button:disabled {
-  background-color: #dfd672;
+  background-color:#F4CE14;
   box-shadow: none;
   /* pointer-events: none; */
+  color: rgba(0, 0, 0, 0.3);
   cursor: not-allowed;
 }
 
@@ -435,13 +458,13 @@ rect {
 .reservation-section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   background-color: #495e57;
   color: #dfd672;
   /* width: 100%; */
-  height: 85vh;
+  height: 70%;
   border-radius: 16px;
-  margin: 1rem;
+  margin:  1rem;
   margin-top: 0;
   padding: 1rem;
   /* justify-content: center; */
@@ -455,6 +478,16 @@ rect {
   height: 50px;
   width: 50px;
   color: #dfd672;
+}
+
+.reservation-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
 }
 
 .reservation-section>article {
@@ -473,41 +506,283 @@ form>fieldset {
   grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
   border-radius: 16px;
   padding: 1rem 1rem;
-  height: 90%;
+  height: 70%;
   row-gap: 2rem;
 }
 
 fieldset>#input {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
+  font-size: 1.2rem;
 }
 
 #input>input,
 #input>select {
   border-radius: 8px;
-  border: #dfd672 solid 1px;
+  border: #ffffff solid 1px;
   border-bottom: none;
-  text-align: center;
+  /* text-align: center; */
+  padding: 0 2rem;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+#input>input:active, #input>select:focus{
+  border: #F4CE14 solid 2px;;
+}
 
-form>button {
-  margin-top: 2rem;
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 1rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
   width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
 }
 
 legend[align=center] {
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.reservation-section>article>form>fieldset>fieldset{
+  border-radius: 16px;
+  padding-top: 1.5rem;
+}
+.reservation-section>article>form>fieldset>fieldset>legend{
+  margin-left: 2rem;
+  font-size: 1.2rem;
+}
+.reservation-section>article>form>fieldset>fieldset>div{
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 1.3rem;
+  justify-items: center;
+  
+}
+
+[for='standard'], [for='outside']{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------------Login------------------------------------ */
+
+
+.login-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 11.1%);
+  background-color: #495e57;
+  color: #F4CE14;
+  /* width: 100%; */
+
+  height: 50vw;
+  border-radius: 16px;
+  margin:  1rem;
+  margin-top: 0;
+  padding: 1rem;
+  /* justify-content: center; */
+  justify-items: center;
+}
+
+.login-section>object {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
+.login-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
+}
+
+.login-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 2/ span 3;
+  width: 30%;
+}
+
+
+
+[for='standard'], [for='outside']{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* -------------------------------------------------------------- */
+
+
+@media (max-width: 1440px) {
+  
+  .login-section>article>form>fieldset{
+    row-gap: 0.4rem;
+  }
+}
+
+
+@media (max-width: 1024px) {
+ 
+
+.reservation-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 1/ span 9;
+  width: 50%;
+}
+
+/* ---------------------------login--------------------------- */
+
+.login-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  background-color: #495e57;
+  color: #dfd672;
+  /* width: 100%; */
+  height: 60vw;
+  border-radius: 16px;
+  margin:  1rem;
+  margin-top: 0;
+  padding: 1rem;
+  /* justify-content: center; */
+  justify-items: center;
+}
+
+.login-section>object {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
+.login-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
+}
+
+.login-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 2/ span 4;
+  width: 30%;
+}
+
+form {
+  height: 70%;
+  /* display: grid; */
+}
+
+ form>fieldset {
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  height: 100%;
+  row-gap: 2rem;
+}
+
+.login-section>article>form>fieldset{
+  row-gap: 0.2rem;
+}
+
+fieldset>#input {
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  font-size: 1.2rem;
+}
+
+#input>input,
+#input>select {
+  border-radius: 8px;
+  border: #ffffff solid 1px;
+  border-bottom: none;
+  /* text-align: center; */
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#input>input:active, #input>select:focus{
+  border: #F4CE14 solid 2px;;
+}
+
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 1rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
+}
+
+legend[align=center] {
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
   color: white;
   text-align: center;
 }
 
 
 
+}
 
 
 
@@ -524,33 +799,46 @@ legend[align=center] {
     display: grid;
     grid-template-columns: 70px 1fr;
     grid-template-rows: 90px;
+    
   }
 
-  [aria-label=hamburger_icon] {
-    /* display: none; */
+  .hamburger {
     display: grid;
     grid-column: 1/ span 1;
+    margin: 1rem;
   }
 
   header>img {
     grid-column: 2 /span 2;
   }
 
-  nav {
+  .navbar {
     display: none;
-    grid-column: 1 /-1;
+  }
+  
+  .navbar.active{
+    
+    /* display: block; */
+    display: block;
+    position:absolute;
+    top: 70%;
+    grid-column: 1 / span 2;
     width: 100%;
     margin-top: 1rem;
+    z-index: 1;
+
   }
 
-  nav>ul {
+  .navbar>ul {
+    background-color: #ffffff;
     list-style: none;
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
   }
 
-  nav>ul>li {
+  .navbar>ul>li {
+    grid-column: 1 / -1;
     display: grid;
     width: 100%;
     padding: 1rem 0;
@@ -623,6 +911,31 @@ legend[align=center] {
     line-height: 1.5rem;
     letter-spacing: 0.1rem;
   }
+
+  .hero-section>article>a{
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    
+    padding: 1rem 0rem;
+    margin-right: 0rem;
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 70%;
+  }
+  
+  .hero-section>article>a:active{
+    box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
+  
+  }
+  
 
   button {
     background-color: #F4CE14;
@@ -883,7 +1196,7 @@ legend[align=center] {
   /* --------------------------Footer-section-------------------------------- */
 
   .footer-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     justify-content: center;
   }
 
@@ -928,6 +1241,320 @@ legend[align=center] {
     align-items: center;
   }
 
+  .reservation-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 80%;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  
+  .reservation-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
+  
+  .reservation-section>article>h3{
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
+  
+  }
+  
+  .reservation-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 11;
+    width: 70%;
+  }
+  
+  form {
+    height: 100%;
+    /* display: grid; */
+  }
+  
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 70%;
+    row-gap: 1.4rem;
+  }
+  
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    font-size: 1.2rem;
+  }
+  
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 1rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
+}
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .reservation-section>article>form>fieldset>fieldset{
+    border-radius: 16px;
+    padding-top: 1.5rem;
+  }
+  .reservation-section>article>form>fieldset>fieldset>legend{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+  }
+  .reservation-section>article>form>fieldset>fieldset>div{
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 1.3rem;
+    justify-items: center;
+    
+  }
+  
+  [for='standard'], [for='outside']{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  
+form {
+  height: 100%;
+  /* display: grid; */
+}
+
+form>fieldset {
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  height: 70%;
+  row-gap: 2rem;
+}
+
+fieldset>#input {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  font-size: 1.2rem;
+}
+
+#input>input,
+#input>select {
+  border-radius: 8px;
+  border: #ffffff solid 1px;
+  border-bottom: none;
+  /* text-align: center; */
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#input>input:active, #input>select:focus{
+  border: #F4CE14 solid 2px;;
+}
+
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 1rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
+}
+
+legend[align=center] {
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/* -----------------login---------------------------------- */
+.login-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  background-color: #495e57;
+  color: #dfd672;
+  /* width: 100%; */
+  height: 80vw;
+  border-radius: 16px;
+  margin:  1rem;
+  margin-top: 0;
+  padding: 1rem;
+  /* justify-content: center; */
+  justify-items: center;
+}
+
+.login-section>object {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
+.login-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
+}
+
+.login-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 1/ span 4;
+  width: 50%;
+}
+
+form {
+  height: 70%;
+  /* display: grid; */
+}
+
+ form>fieldset {
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  height: 100%;
+  row-gap: 2rem;
+}
+
+.login-section>article>form>fieldset{
+  row-gap: 0.2rem;
+}
+
+fieldset>#input {
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  font-size: 1.2rem;
+}
+
+#input>input,
+#input>select {
+  border-radius: 8px;
+  border: #ffffff solid 1px;
+  border-bottom: none;
+  /* text-align: center; */
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#input>input:active, #input>select:focus{
+  border: #F4CE14 solid 2px;;
+}
+
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 1rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
+}
+
+legend[align=center] {
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+
 
 }
 
@@ -946,7 +1573,7 @@ legend[align=center] {
     grid-template-rows: 70px;
   }
 
-  [aria-label=hamburger_icon] {
+  .hamburger {
     /* display: none; */
     display: grid;
     grid-column: 1/ span 1;
@@ -956,21 +1583,21 @@ legend[align=center] {
     grid-column: 2 /span 2;
   }
 
-  nav {
+  .navbar {
     display: none;
     grid-column: 1 /-1;
     width: 100%;
     margin-top: 1rem;
   }
 
-  nav>ul {
+  .navbar>ul {
     list-style: none;
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
   }
 
-  nav>ul>li {
+  .navbar>ul>li {
     display: grid;
     width: 100%;
     padding: 1rem 0;
@@ -1047,6 +1674,31 @@ legend[align=center] {
     letter-spacing: 0.1rem;
     padding-right: 10rem;
   }
+
+  .hero-section>article>a{
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem 0rem;
+    margin-right: 0rem;
+    border-radius: 8px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 40%;
+  }
+  
+  .hero-section>article>a:active{
+    box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
+  
+  }
+  
 
   button {
     background-color: #F4CE14;
@@ -1338,7 +1990,7 @@ legend[align=center] {
   /* --------------------------Footer-section-------------------------------- */
 
   .footer-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     justify-content: center;
   }
 
@@ -1383,10 +2035,469 @@ legend[align=center] {
     align-items: center;
   }
 
+  .reservation-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 85vh;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  
+  .reservation-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
+  
+  .reservation-section>article>h3{
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
+  
+  }
+  
+  .reservation-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 9;
+    width: 99%;
+  }
+  
+  form {
+    height: 95%;
+    /* display: grid; */
+  }
+  
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 90%;
+    row-gap: 1rem;
+  }
+  
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    font-size: 1.2rem;
+  }
+  
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  
+  form>button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+ .reservation-section>article>form>fieldset>legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .reservation-section>article>form>fieldset>fieldset{
+    border-radius: 16px;
+    padding-top: 1.5rem;
+  }
+  .reservation-section>article>form>fieldset>fieldset>legend{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+  }
+  .reservation-section>article>form>fieldset>fieldset>div{
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 1.3rem;
+    justify-items: center;
+    
+  }
+  
+  [for='standard'], [for='outside']{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* ---------------------------login---------------------------- */
+
+
+  .login-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 50vh;
+    border-radius: 16px;
+    margin:  1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  
+  .login-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
+  
+  .login-section>article>h3{
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
+  
+  }
+  
+  .login-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 6;
+    width: 90%;
+  }
+  
+ .login-section>article>form {
+    height: 70%;
+    /* display: grid; */
+  }
+  
+  .login-section>article>form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 100%;
+    row-gap: 2rem;
+  }
+  
+  .login-section>article>form>fieldset{
+    row-gap: 0.2rem;
+  }
+  
+ .login-section>article>form>fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    font-size: 1.2rem;
+  }
+  
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    /* text-align: center; */
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  #input>input:active, #input>select:focus{
+    border: #F4CE14 solid 2px;;
+  }
+  
+  form>a {
+  
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 1rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  form>a:hover{
+    text-decoration: none
+  }
+  
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
+  
+
 
 }
 
+@media (max-width:320px) {
+  
+.reservation-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(12, 1fr);
+  background-color: #495e57;
+  color: #dfd672;
+  /* width: 100%; */
+  height: 70%;
+  border-radius: 16px;
+  margin: 0.5rem;
+  margin-top: 0;
+  padding: 0.2rem;
+  /* justify-content: center; */
+  justify-items: center;
+}
 
+.reservation-section>object {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
+.reservation-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
+}
+
+.reservation-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 2/ span 11;
+  width: 100%;
+}
+
+.reservation-section>article>form {
+  height: 100%;
+  /* display: grid; */
+}
+
+.reservation-section>article>form>fieldset {
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+  border-radius: 16px;
+  padding: 0.1rem 0.1rem;
+  height: 65%;
+  row-gap: 0.3rem;
+}
+
+fieldset>#input {
+  display: grid;
+  grid-template-rows: 0.5fr 0.8fr;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+#input>input,
+#input>select {
+  border-radius: 8px;
+  border: #ffffff solid 1px;
+  border-bottom: none;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+form>button {
+  margin: 1rem 1rem;
+  width: 90%;
+}
+
+legend[align=center] {
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: white;
+  text-align: center;
+}
+
+.reservation-section>article>form>fieldset>fieldset{
+  border-radius: 16px;
+  padding-top: 0.5rem;
+  margin: 0 1rem;
+  height: 60%;
+}
+.reservation-section>article>form>fieldset>fieldset>legend{
+  margin-left: 0.3rem;
+  font-size: 1rem;
+}
+.reservation-section>article>form>fieldset>fieldset>div{
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1rem;
+  margin-bottom: 1.3rem;
+  justify-items: center;
+  
+}
+
+[for='standard'], [for='outside']{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ----------------------------login--------------------------- */
+
+.login-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  background-color: #495e57;
+  color: #dfd672;
+  /* width: 100%; */
+  height: 50vh;
+  border-radius: 16px;
+  margin:  0rem;
+  margin-top: 0;
+  padding: 0rem;
+  /* justify-content: center; */
+  justify-items: center;
+}
+
+.login-section>object {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: #dfd672;
+}
+
+.login-section>article>h3{
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 0.7rem;
+
+}
+
+.login-section>article {
+  /* grid-column: 5/ span 6; */
+  grid-row: 1/ span 4;
+  width: 95%;
+}
+
+form {
+  height: 100%;
+  /* display: grid; */
+}
+
+ form>fieldset {
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  height: 80%;
+  row-gap: 2rem;
+}
+
+.login-section>article>form>fieldset{
+  row-gap: 0.2rem;
+}
+
+fieldset>#input {
+  display: grid;
+  grid-template-rows: 0.1fr 0.6fr;
+  font-size: 1rem;
+}
+
+#input>input,
+#input>select {
+  border-radius: 8px;
+  border: #ffffff solid 1px;
+  border-bottom: none;
+  /* text-align: center; */
+  padding: 0 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#input>input:active, #input>select:focus{
+  border: #F4CE14 solid 2px;;
+}
+
+form>a {
+
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  display: grid;
+  grid-row: 9/ span 10;
+  padding: 0.6rem 0rem;
+  /* margin-right: 5rem; */
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+form>a:hover{
+  text-decoration: none
+}
+
+legend[align=center] {
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+
+
+}
 
 
 
@@ -1400,7 +2511,7 @@ legend[align=center] {
 
 
 
-/* header>nav:active{
+/* header>.navbar:active{
   margin-top: 1rem;
   grid-column: 1/ span 12;
 width: 100vw;

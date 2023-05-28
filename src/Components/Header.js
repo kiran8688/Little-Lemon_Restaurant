@@ -1,79 +1,82 @@
-// import { useState } from "react"
-import React, { useEffect, useState } from 'react'
-import hamburgerIcon from "../assets/icons_assets/🦆 icon _hamburger menu_.svg"
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import hamburgerIcon from '../assets/icons_assets/🦆 icon _hamburger menu.svg';
+import { Link, useLocation } from 'react-router-dom';
+
 function Header() {
+  const location = useLocation();
+  const [pathRef, setPathRef] = useState(location.pathname);
+  const [hamClick, setHamClick] = useState(false);
+  const [classChange, setClassChange] = useState('navbar');
 
-  var path = window.location.pathname
-
-  const [pathRef, setPathRef] = useState(path)
-
-  var styl
-
-  if(pathRef!=='/'){
-  styl=
-      {gridTemplateColumns: '1fr 1fr 1fr'}
-    
-  }else{
-    styl=
-      {gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr'}
+  var styl;
+  if (pathRef !== '/') {
+    styl = { gridTemplateColumns: '1fr 1fr 1fr' };
+  } else {
+    styl = { gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr' };
   }
 
-
-  const [NavLinks, setNavLinks] = useState(['About', 'Menu', 'Testimonials'])
+  const [NavLinks, setNavLinks] = useState(['About', 'Menu', 'Testimonials']);
 
   useEffect(() => {
+    setPathRef(location.pathname);
+    const links = location.pathname === '/' ? ['About', 'Menu', 'Testimonials'] : [];
+    setNavLinks(links);
+  }, [location.pathname]);
 
-    setPathRef(path)
-
-   const links = (path === '/') ? ['About', 'Menu', 'Testimonials'] : []
-   setNavLinks(links)
-  
-  }, [NavLinks, path])
-
-
-
-
+  useEffect(() => {
+    if (hamClick) {
+      setClassChange('navbar active');
+    } else {
+      setClassChange('navbar');
+    }
+  }, [hamClick]);
 
   const renderNavLinks = (links) => {
-
     const linkHandler = () => {
-
-      const scroolToId = `${links.toLowerCase()}-section`
-
-      document.getElementById(scroolToId).scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
-    }
+      const scrollToId = `${links.toLowerCase()}-section`;
+      document.getElementById(scrollToId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      });
+      setHamClick(false); // Close the navbar after clicking a link
+    };
 
     return (
-      <li key={links}><a href onClick={() => { linkHandler(links) }} aria-label='on Click'>{links}</a></li>
-    )
+      <li key={links}>
+        <a href={`#${links}`} onClick={linkHandler} aria-label="on Click">
+          {links}
+        </a>
+      </li>
+    );
+  };
 
-  }
+  const handleHamClick = () => {
+    setHamClick((prevState) => !prevState);
+  };
 
   return (
     <>
       <header>
-        <object width={20} height={20} aria-label='hamburger_icon' data={hamburgerIcon} type="image/svg+xml"></object>
-        <img src={require('../assets/logos/Asset 16@4x.png')} width={200} alt='little-lemon logo' />
-        <nav>
-          
+          <img aria-label="hamburger_icon" width={'30%'} src={hamburgerIcon} alt="hamburger-icon" onClick={handleHamClick} className={`hamburger ${hamClick ? 'active' : ''}`}  />
+        <img src={require('../assets/logos/Asset 16@4x.png')}  width={200} alt="little-lemon logo" />
+        <nav className={classChange}>
           <ul style={styl}>
-            <li><Link to="/">Home</Link></li>
-            {NavLinks.map(li => renderNavLinks(li))}
-            <li><Link to="/reservations">Reservations</Link> </li>
-            <li><Link to='/login'>Login</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            {NavLinks.map((li) => renderNavLinks(li))}
+            <li>
+              <Link to="/reservations">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </nav>
       </header>
     </>
-  )
+  );
 }
 
 export default Header;
-
-
-
-
-
-
-
