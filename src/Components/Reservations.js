@@ -3,7 +3,7 @@ import ReactDatePicker from 'react-datepicker';
 import { Link } from 'react-router-dom';
 
 import 'react-datepicker/dist/react-datepicker.css';
-// import homeIcon from '../assets/icons_assets/home icon.svg'
+import homeIcon from '../assets/icons_assets/home icon.svg'
 
 function ReserveTable() {
 
@@ -21,7 +21,10 @@ function ReserveTable() {
   return (
     <>
       <section className='reservation-section'>
-        {/* <object width={50} height={50} data={homeIcon} aria-label='home_icon' type="image/svg+xml"></object> */}
+        <Link to={'/'}>
+
+      <img  aria-label="home_icon" src={homeIcon} alt="home-icon" style={{backgroundColor: '#f4ce14',height:'inherit', width:'inherit', borderRadius: 'inherit'}} />
+        </Link>
         <article>
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
@@ -33,14 +36,14 @@ function ReserveTable() {
                 <label htmlFor='date' id='date' className='input-label'>
                   Date
                 </label>
-                <ReactDatePicker 
-                selected={date} 
-                onChange={date =>setDate(date)} 
-                minDate={new Date()} 
-                placeholderText='dd-mm-yyyy'
-                dateFormat={'dd/MMMM/yyyy'}
-                id='react-datepicker'  />
-              </div> 
+                <ReactDatePicker
+                  selected={date}
+                  onChange={date => setDate(date)}
+                  minDate={new Date()}
+                  placeholderText='dd-mm-yyyy'
+                  dateFormat={'dd/MMMM/yyyy'}
+                  id='react-datepicker' />
+              </div>
 
               <div id='input'>
 

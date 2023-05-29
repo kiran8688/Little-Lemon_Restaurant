@@ -44,7 +44,7 @@ function Header() {
 
     return (
       <li key={links} onClick={linkHandler}>
-        <a href={`#${links}`}  aria-label="on Click">
+        <a href={`#${links}`} aria-label="on Click">
           {links}
         </a>
       </li>
@@ -58,19 +58,19 @@ function Header() {
   return (
     <>
       <header>
-          <img aria-label="hamburger_icon" width={'30%'} src={hamburgerIcon} alt="hamburger-icon" onClick={handleHamClick} className={`hamburger ${hamClick ? 'active' : ''}`}  />
-        <img src={require('../assets/logos/Asset 16@4x.png')}  width={200} alt="little-lemon logo" />
+        <img aria-label="hamburger_icon" width={'30%'} src={hamburgerIcon} alt="hamburger-icon" onClick={handleHamClick} className={`hamburger ${hamClick ? 'active' : ''}`} />
+        <img src={require('../assets/logos/Asset 16@4x.png')} width={200} alt="little-lemon logo" />
         <nav className={classChange}>
           <ul style={styl}>
             <li>
-              <Link to="/" onClick={()=>setHamClick(false)}>Home</Link>
+              <Link to="/" onClick={() => setHamClick(false)}>Home</Link>
             </li>
             {NavLinks.map((li) => renderNavLinks(li))}
             <li component={Link} to='/reservations'>
-              <Link to="/reservations" onClick={()=>setHamClick(false)}>Reservations</Link>
+              <Link to="/reservations" onClick={() => setHamClick(false)}>Reservations</Link>
             </li>
             <li component={Link} to='/login'>
-              <Link to="/login" onClick={()=>setHamClick(false)}>Login</Link>
+              <Link to="/login" onClick={() => setHamClick(false)}>Login</Link>
             </li>
           </ul>
         </nav>

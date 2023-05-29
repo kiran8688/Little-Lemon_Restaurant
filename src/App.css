@@ -110,11 +110,11 @@ h1 {
   letter-spacing: 0.1rem;
 }
 
-.hero-section>article>a{
+.hero-section>article>a {
   background-color: #F4CE14;
   text-decoration: none;
   text-align: center;
-  
+
   padding: 1rem 0.1rem;
   margin-right: 5rem;
   border-radius: 16px;
@@ -128,7 +128,7 @@ h1 {
   cursor: pointer;
 }
 
-.hero-section>article>a:active{
+.hero-section>article>a:active {
   box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
 
 }
@@ -149,7 +149,7 @@ button {
 }
 
 button:disabled {
-  background-color:#F4CE14;
+  background-color: #F4CE14;
   box-shadow: none;
   color: rgba(0, 0, 0, 0.3);
   cursor: not-allowed;
@@ -456,30 +456,38 @@ rect {
 
 .reservation-section {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto repeat(10, 1fr);
   background-color: #495e57;
   color: #dfd672;
   /* width: 100%; */
-  height: 70%;
+  height: 100%;
   border-radius: 16px;
-  margin:  1rem;
+  margin: 1rem;
   margin-top: 0;
   padding: 1rem;
   /* justify-content: center; */
   justify-items: center;
 }
 
-.reservation-section>object {
-  position: fixed;
-  top: 0%;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  color: #dfd672;
+.reservation-section>[aria-label=home_icon] {
+  /* top: -50%; */
+  border: none;
 }
 
-.reservation-section>article>h3{
+.reservation-section>a{
+  grid-row: 1/span 1;
+  position: fixed;
+  left: 2%;
+  border-radius: 16px;
+  z-index: 1;
+  height: 5vh;
+  width: 2vw;
+  color: #dfd672;
+  
+}
+
+.reservation-section>article>h3 {
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 400;
@@ -490,8 +498,8 @@ rect {
 }
 
 .reservation-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 1/ span 9;
+  grid-column: 2/ span 2;
+  grid-row: 2/ span 9;
   width: 30%;
 }
 
@@ -526,7 +534,7 @@ fieldset>#input {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-#react-datepicker{
+#react-datepicker {
   width: 86%;
   height: 2.3rem;
   border-radius: 8px;
@@ -535,9 +543,10 @@ fieldset>#input {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-#input>input:active, #input>select:focus{
+#input>input:active,
+#input>select:focus {
   border: #F4CE14 solid 2px;
-  
+
 
 }
 
@@ -563,7 +572,7 @@ form>a {
   width: 100%;
 }
 
-form>a:hover{
+form>a:hover {
   text-decoration: none
 }
 
@@ -576,25 +585,28 @@ legend[align=center] {
   text-align: center;
 }
 
-.reservation-section>article>form>fieldset>fieldset{
+.reservation-section>article>form>fieldset>fieldset {
   border-radius: 16px;
   padding-top: 1.5rem;
 }
-.reservation-section>article>form>fieldset>fieldset>legend{
+
+.reservation-section>article>form>fieldset>fieldset>legend {
   margin-left: 2rem;
   font-size: 1.2rem;
 }
-.reservation-section>article>form>fieldset>fieldset>div{
+
+.reservation-section>article>form>fieldset>fieldset>div {
   font-size: 1.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   margin-bottom: 1.3rem;
   justify-items: center;
-  
+
 }
 
-[for='standard'], [for='outside']{
+[for='standard'],
+[for='outside'] {
   display: block;
   width: 100%;
   text-align: center;
@@ -613,7 +625,7 @@ legend[align=center] {
 
   height: 50vw;
   border-radius: 16px;
-  margin:  1rem;
+  margin: 1rem;
   margin-top: 0;
   padding: 1rem;
   /* justify-content: center; */
@@ -629,12 +641,12 @@ legend[align=center] {
   color: #dfd672;
 }
 
-.login-section>article{
+.login-section>article {
   grid-row: 2/ span 5;
   height: 130%;
 }
 
-.login-section>article>h3{
+.login-section>article>h3 {
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 400;
@@ -652,7 +664,8 @@ legend[align=center] {
 
 
 
-[for='standard'], [for='outside']{
+[for='standard'],
+[for='outside'] {
   display: block;
   width: 100%;
   text-align: center;
@@ -664,141 +677,215 @@ legend[align=center] {
 
 
 @media (max-width: 1440px) {
-  
-  .login-section>article>form>fieldset{
+
+  .login-section>article>form>fieldset {
     row-gap: 0.4rem;
   }
 
-  .reservation-section>article{
+  .reservation-section>article {
     width: 60vh;
   }
+
+  .reservation-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
+  }
+  
+  .reservation-section>a{
+    grid-row: 1/span 1;
+    position: fixed;
+    /* top: -50%; */
+    left: 2%;
+    border-radius: 16px;
+    z-index: 1;
+    height: 6vh;
+    width: 3vw;
+    min-width: 3vw;
+    color: #dfd672;
+    
+    
+  }
+  
+
+
 }
 
 
 @media (max-width: 1024px) {
- 
 
-.reservation-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 1/ span 9;
-  width: 50%;
-}
 
-/* ---------------------------login--------------------------- */
+  .reservation-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 9;
+    width: 50%;
+  }
 
-.login-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, 1fr);
-  background-color: #495e57;
-  color: #dfd672;
-  /* width: 100%; */
-  height: 80vw;
-  border-radius: 16px;
-  margin:  1rem;
-  margin-top: 0;
-  padding: 1rem;
-  /* justify-content: center; */
-  justify-items: center;
-}
+  .reservation-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
+  }
+  
+  .reservation-section>a{
+    grid-row: 1/span 1;
+    position: fixed;
+    /* top: -50%; */
+    left: 2%;
+    border-radius: 16px;
+    z-index: 1;
+    height: 7vh;
+    width: 5vw;
+    min-width: 5vw;
+    color: #dfd672;
+    
+  }
+  
 
-.login-section>object {
-  position: fixed;
-  top: 0%;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  color: #dfd672;
-}
+  /* ---------------------------login--------------------------- */
 
-.login-section>article>h3{
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 0.7rem;
+  .login-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 80vw;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
 
-}
+  .login-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
 
-.login-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 2/ span 4;
-  width: 30%;
-}
+  .login-section>article>h3 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
 
-form {
-  height: 70%;
-  /* display: grid; */
-}
+  }
 
- form>fieldset {
-  display: grid;
-  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
-  border-radius: 16px;
-  padding: 1rem 1rem;
-  height: 100%;
-  row-gap: 2rem;
-}
+  .login-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 2/ span 4;
+    width: 30%;
+  }
 
-.login-section>article>form>fieldset{
-  row-gap: 0.2rem;
-}
+  form {
+    height: 70%;
+    /* display: grid; */
+  }
 
-fieldset>#input {
-  display: grid;
-  grid-template-rows: 0.1fr 1fr;
-  font-size: 1.2rem;
-}
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 100%;
+    row-gap: 2rem;
+  }
 
-#input>input,
-#input>select {
-  border-radius: 8px;
-  border: #ffffff solid 1px;
-  border-bottom: none;
-  /* text-align: center; */
-  padding: 0 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+  .login-section>article>form>fieldset {
+    row-gap: 0.2rem;
+  }
 
-#input>input:active, #input>select:focus{
-  border: #F4CE14 solid 2px;;
-}
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    font-size: 1.2rem;
+  }
 
-form>a {
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    /* text-align: center; */
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 
-  background-color: #F4CE14;
-  text-decoration: none;
-  text-align: center;
-  display: grid;
-  grid-row: 9/ span 10;
-  padding: 1rem 0rem;
-  /* margin-right: 5rem; */
-  border-radius: 16px;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-  border-style: none;
-  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
-}
+  #input>input:active,
+  #input>select:focus {
+    border: #F4CE14 solid 2px;
+    ;
+  }
 
-form>a:hover{
-  text-decoration: none
-}
+  form>a {
 
-legend[align=center] {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-}
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 1rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  form>a:hover {
+    text-decoration: none
+  }
+
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
 
 
 
@@ -819,7 +906,7 @@ legend[align=center] {
     display: grid;
     grid-template-columns: 70px 1fr;
     grid-template-rows: 90px;
-    
+
   }
 
   .hamburger {
@@ -835,12 +922,12 @@ legend[align=center] {
   .navbar {
     display: none;
   }
-  
-  .navbar.active{
-    
+
+  .navbar.active {
+
     /* display: block; */
     display: block;
-    position:absolute;
+    position: absolute;
     top: 70%;
     grid-column: 1 / span 2;
     width: 100%;
@@ -932,11 +1019,11 @@ legend[align=center] {
     letter-spacing: 0.1rem;
   }
 
-  .hero-section>article>a{
+  .hero-section>article>a {
     background-color: #F4CE14;
     text-decoration: none;
     text-align: center;
-    
+
     padding: 1rem 0rem;
     margin-right: 0rem;
     border-radius: 16px;
@@ -950,12 +1037,12 @@ legend[align=center] {
     cursor: pointer;
     width: 70%;
   }
-  
-  .hero-section>article>a:active{
+
+  .hero-section>article>a:active {
     box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
-  
+
   }
-  
+
 
   button {
     background-color: #F4CE14;
@@ -1263,12 +1350,12 @@ legend[align=center] {
 
   .reservation-section {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
     background-color: #495e57;
     color: #dfd672;
     /* width: 100%; */
-    height: 80%;
+    height: 100%;
     border-radius: 16px;
     margin: 1rem;
     margin-top: 0;
@@ -1277,36 +1364,47 @@ legend[align=center] {
     justify-items: center;
   }
   
-  .reservation-section>object {
-    position: fixed;
-    top: 0%;
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
+  }
+  .reservation-section>a{
+    
+    grid-row: 1/span 1;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    border-radius: 16px;
     z-index: 1;
-    height: 50px;
-    width: 50px;
+    height: 3vh;
+    width: 8vw;
+    min-width: 50px;
     color: #dfd672;
+    
   }
   
-  .reservation-section>article>h3{
+  
+
+  .reservation-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .reservation-section>article {
     /* grid-column: 5/ span 6; */
     grid-row: 1/ span 11;
     width: 100%;
   }
-  
+
   form {
     height: 100%;
     /* display: grid; */
   }
-  
+
   form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
@@ -1315,15 +1413,15 @@ legend[align=center] {
     height: 70%;
     row-gap: 1.4rem;
   }
-  
+
   fieldset>#input {
     display: grid;
     grid-template-rows: 0.5fr 1fr;
     font-size: 1.2rem;
   }
-  
-  #react-datepicker{
-    width: 91%;
+
+  #react-datepicker {
+    width: 80%;
     /* max-width: 60vw; */
     height: 2.3rem;
     border-radius: 8px;
@@ -1331,7 +1429,7 @@ legend[align=center] {
     padding: 0 2rem;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  
+
   #input>input,
   #input>select {
     border-radius: 8px;
@@ -1340,32 +1438,33 @@ legend[align=center] {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  
-form>a {
 
-  background-color: #F4CE14;
-  text-decoration: none;
-  text-align: center;
-  display: grid;
-  grid-row: 9/ span 10;
-  padding: 1rem 0rem;
-  /* margin-right: 5rem; */
-  border-radius: 16px;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-  border-style: none;
-  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
-}
+  form>a {
 
-form>a:hover{
-  text-decoration: none
-}
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 1rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  form>a:hover {
+    text-decoration: none
+  }
+
   legend[align=center] {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -1374,216 +1473,223 @@ form>a:hover{
     color: white;
     text-align: center;
   }
-  
-  .reservation-section>article>form>fieldset>fieldset{
+
+  .reservation-section>article>form>fieldset>fieldset {
     border-radius: 16px;
     padding-top: 1.5rem;
     height: 80%;
   }
-  .reservation-section>article>form>fieldset>fieldset>legend{
+
+  .reservation-section>article>form>fieldset>fieldset>legend {
     margin-left: 2rem;
     font-size: 1.2rem;
   }
-  .reservation-section>article>form>fieldset>fieldset>div{
+
+  .reservation-section>article>form>fieldset>fieldset>div {
     font-size: 1.2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     margin-bottom: 1.3rem;
     justify-items: center;
-    
+
   }
-  
-  [for='standard'], [for='outside']{
+
+  [for='standard'],
+  [for='outside'] {
     display: block;
     width: 100%;
     text-align: center;
   }
-  
-  
-form {
-  height: 100%;
-  /* display: grid; */
-}
 
-form>fieldset {
-  display: grid;
-  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
-  border-radius: 16px;
-  padding: 1rem 1rem;
-  height: 70%;
-  row-gap: 2rem;
-}
 
-fieldset>#input {
-  display: grid;
-  grid-template-rows: 0.5fr 1fr;
-  font-size: 1.2rem;
-}
+  form {
+    height: 100%;
+    /* display: grid; */
+  }
 
-#input>input,
-#input>select {
-  border-radius: 8px;
-  border: #ffffff solid 1px;
-  border-bottom: none;
-  /* text-align: center; */
-  padding: 0 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 70%;
+    row-gap: 2rem;
+  }
 
-#input>input:active, #input>select:focus{
-  border: #F4CE14 solid 2px;;
-}
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    font-size: 1.2rem;
+  }
 
-form>a {
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    /* text-align: center; */
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 
-  background-color: #F4CE14;
-  text-decoration: none;
-  text-align: center;
-  display: grid;
-  grid-row: 9/ span 10;
-  padding: 1rem 0rem;
-  /* margin-right: 5rem; */
-  border-radius: 16px;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-  border-style: none;
-  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
-}
+  #input>input:active,
+  #input>select:focus {
+    border: #F4CE14 solid 2px;
+    ;
+  }
 
-form>a:hover{
-  text-decoration: none
-}
+  form>a {
 
-legend[align=center] {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-}
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 1rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
 
-/* -----------------login---------------------------------- */
-.login-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, 1fr);
-  background-color: #495e57;
-  color: #dfd672;
-  /* width: 100%; */
-  height: 80vh;
-  border-radius: 16px;
-  margin:  1rem;
-  margin-top: 0;
-  padding: 1rem;
-  /* justify-content: center; */
-  justify-items: center;
-}
+  form>a:hover {
+    text-decoration: none
+  }
 
-.login-section>object {
-  position: fixed;
-  top: 0%;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  color: #dfd672;
-}
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
 
-.login-section>article>h3{
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 0.7rem;
+  /* -----------------login---------------------------------- */
+  .login-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 80vh;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
 
-}
+  .login-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
 
-.login-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 1/ span 4;
-  width: 80%;
-}
+  .login-section>article>h3 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
 
-form {
-  height: 70%;
-  /* display: grid; */
-}
+  }
 
- form>fieldset {
-  display: grid;
-  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
-  border-radius: 16px;
-  padding: 1rem 1rem;
-  height: 100%;
-  row-gap: 2rem;
-}
+  .login-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 4;
+    width: 80%;
+  }
 
-.login-section>article>form>fieldset{
-  row-gap: 0.2rem;
-}
+  form {
+    height: 70%;
+    /* display: grid; */
+  }
 
-fieldset>#input {
-  display: grid;
-  grid-template-rows: 0.1fr 1fr;
-  font-size: 1.2rem;
-}
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 100%;
+    row-gap: 2rem;
+  }
 
-#input>input,
-#input>select {
-  border-radius: 8px;
-  border: #ffffff solid 1px;
-  border-bottom: none;
-  /* text-align: center; */
-  padding: 0 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+  .login-section>article>form>fieldset {
+    row-gap: 0.2rem;
+  }
 
-#input>input:active, #input>select:focus{
-  border: #F4CE14 solid 2px;;
-}
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    font-size: 1.2rem;
+  }
 
-form>a {
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    /* text-align: center; */
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 
-  background-color: #F4CE14;
-  text-decoration: none;
-  text-align: center;
-  display: grid;
-  grid-row: 9/ span 10;
-  padding: 1rem 0rem;
-  /* margin-right: 5rem; */
-  border-radius: 16px;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-  border-style: none;
-  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
-}
+  #input>input:active,
+  #input>select:focus {
+    border: #F4CE14 solid 2px;
+    ;
+  }
 
-form>a:hover{
-  text-decoration: none
-}
+  form>a {
 
-legend[align=center] {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-}
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 1rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  form>a:hover {
+    text-decoration: none
+  }
+
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  }
 
 
 
@@ -1706,7 +1812,7 @@ legend[align=center] {
     padding-right: 10rem;
   }
 
-  .hero-section>article>a{
+  .hero-section>article>a {
     background-color: #F4CE14;
     text-decoration: none;
     text-align: center;
@@ -1724,12 +1830,12 @@ legend[align=center] {
     cursor: pointer;
     width: 40%;
   }
-  
-  .hero-section>article>a:active{
+
+  .hero-section>article>a:active {
     box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0);
-  
+
   }
-  
+
 
   button {
     background-color: #F4CE14;
@@ -2068,12 +2174,12 @@ legend[align=center] {
 
   .reservation-section {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
     background-color: #495e57;
     color: #dfd672;
     /* width: 100%; */
-    height: 85vh;
+    height: 100%;
     border-radius: 16px;
     margin: 1rem;
     margin-top: 0;
@@ -2082,36 +2188,47 @@ legend[align=center] {
     justify-items: center;
   }
   
-  .reservation-section>object {
-    position: fixed;
-    top: 0%;
-    z-index: 1;
-    height: 50px;
-    width: 50px;
-    color: #dfd672;
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
   }
   
-  .reservation-section>article>h3{
+  .reservation-section>a{
+    grid-row: 1/span 1;
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    border-radius: 16px;
+    z-index: 1;
+    height: 3vh;
+    width: 7vw;
+    color: #dfd672;
+    
+    
+  }
+  
+  
+
+  .reservation-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .reservation-section>article {
     /* grid-column: 5/ span 6; */
     grid-row: 1/ span 9;
     width: 99%;
   }
-  
+
   form {
     height: 95%;
     /* display: grid; */
   }
-  
+
   form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
@@ -2120,14 +2237,14 @@ legend[align=center] {
     height: 90%;
     row-gap: 1rem;
   }
-  
+
   fieldset>#input {
     display: grid;
     grid-template-rows: 0.5fr 1fr;
     font-size: 1.2rem;
   }
 
-  #react-datepicker{
+  #react-datepicker {
     width: 80%;
     height: 2.3rem;
     border-radius: 8px;
@@ -2135,7 +2252,7 @@ legend[align=center] {
     padding: 0 2rem;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  
+
   #input>input,
   #input>select {
     border-radius: 8px;
@@ -2144,14 +2261,14 @@ legend[align=center] {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  
-  
+
+
   form>button {
     margin-top: 2rem;
     width: 100%;
   }
-  
- .reservation-section>article>form>fieldset>legend[align=center] {
+
+  .reservation-section>article>form>fieldset>legend[align=center] {
     font-family: 'Markazi Text';
     font-style: normal;
     font-weight: 300;
@@ -2159,31 +2276,34 @@ legend[align=center] {
     color: white;
     text-align: center;
   }
-  
-  .reservation-section>article>form>fieldset>fieldset{
+
+  .reservation-section>article>form>fieldset>fieldset {
     border-radius: 16px;
     padding-top: 1.5rem;
   }
-  .reservation-section>article>form>fieldset>fieldset>legend{
+
+  .reservation-section>article>form>fieldset>fieldset>legend {
     margin-left: 2rem;
     font-size: 1.2rem;
   }
-  .reservation-section>article>form>fieldset>fieldset>div{
+
+  .reservation-section>article>form>fieldset>fieldset>div {
     font-size: 1.2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     margin-bottom: 1.3rem;
     justify-items: center;
-    
+
   }
-  
-  [for='standard'], [for='outside']{
+
+  [for='standard'],
+  [for='outside'] {
     display: block;
     width: 100%;
     text-align: center;
   }
-  
+
   /* ---------------------------login---------------------------- */
 
 
@@ -2196,13 +2316,13 @@ legend[align=center] {
     /* width: 100%; */
     height: 80vh;
     border-radius: 16px;
-    margin:  1rem;
+    margin: 1rem;
     margin-top: 0;
     padding: 1rem;
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .login-section>object {
     position: fixed;
     top: 0%;
@@ -2211,28 +2331,28 @@ legend[align=center] {
     width: 50px;
     color: #dfd672;
   }
-  
-  .login-section>article>h3{
+
+  .login-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .login-section>article {
     /* grid-column: 5/ span 6; */
     grid-row: 1/ span 6;
     width: 100%;
   }
-  
- .login-section>article>form {
+
+  .login-section>article>form {
     height: 50%;
     /* display: grid; */
   }
-  
+
   .login-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
@@ -2241,17 +2361,17 @@ legend[align=center] {
     height: 100%;
     row-gap: 2rem;
   }
-  
-  .login-section>article>form>fieldset{
+
+  .login-section>article>form>fieldset {
     row-gap: 0.2rem;
   }
-  
- .login-section>article>form>fieldset>#input {
+
+  .login-section>article>form>fieldset>#input {
     display: grid;
     grid-template-rows: 0.1fr 1fr;
     font-size: 1.2rem;
   }
-  
+
   #input>input,
   #input>select {
     border-radius: 8px;
@@ -2261,13 +2381,15 @@ legend[align=center] {
     padding: 0 2rem;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  
-  #input>input:active, #input>select:focus{
-    border: #F4CE14 solid 2px;;
+
+  #input>input:active,
+  #input>select:focus {
+    border: #F4CE14 solid 2px;
+    ;
   }
-  
+
   form>a {
-  
+
     background-color: #F4CE14;
     text-decoration: none;
     text-align: center;
@@ -2287,11 +2409,11 @@ legend[align=center] {
     margin-top: 1rem;
     width: 100%;
   }
-  
-  form>a:hover{
+
+  form>a:hover {
     text-decoration: none
   }
-  
+
   legend[align=center] {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -2300,14 +2422,14 @@ legend[align=center] {
     color: white;
     text-align: center;
   }
-  
+
 
 
 }
 
 
 @media (max-width: 375px) {
-  #react-datepicker{
+  #react-datepicker {
     width: 76%;
     height: 2.3rem;
     border-radius: 8px;
@@ -2317,254 +2439,302 @@ legend[align=center] {
 
   }
 
-  .reservation-section{
-    height: 100vh;
+  .reservation-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
   }
-  .reservation-section>article{
-    width: 100%;
+  
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
+  }
+  .reservation-section>a{
+    grid-row: 1/span 1;
+    position: fixed;
+    /* top: -50%; */
+    left: 9%;
+    border-radius: 16px;
+    z-index: 1;
+    height: 3vh;
+    width: 8vw;
+    color: #dfd672;
     
+    
+  }
+  
+  
+
+  .reservation-section>article {
+    width: 100%;
+
   }
 }
 
 
 
 @media (max-width:320px) {
+
+  .reservation-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 16px;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
   
-.reservation-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(12, 1fr);
-  background-color: #495e57;
-  color: #dfd672;
-  /* width: 100%; */
-  height: 70%;
-  border-radius: 16px;
-  margin: 0.5rem;
-  margin-top: 0;
-  padding: 0.2rem;
-  /* justify-content: center; */
-  justify-items: center;
-}
-
-.reservation-section>object {
-  position: fixed;
-  top: 0%;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  color: #dfd672;
-}
-
-.reservation-section>article>h3{
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 0.7rem;
-
-}
-
-.reservation-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 2/ span 11;
-  width: 100%;
-}
-
-.reservation-section>article>form {
-  height: 100%;
-  /* display: grid; */
-}
-
-.reservation-section>article>form>fieldset {
-  display: grid;
-  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
-  border-radius: 16px;
-  padding: 0.1rem 0.1rem;
-  height: 65%;
-  row-gap: 0.3rem;
-}
-
-fieldset>#input {
-  display: grid;
-  grid-template-rows: 0.5fr 0.8fr;
-  font-size: 1rem;
-  margin: 0 1rem;
-}
-#react-datepicker{
-  width: 75%;
-  height: 1.7rem;
-  border-radius: 8px;
-  border: none;
-  padding: 0 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-#input>input,
-#input>select {
-  border-radius: 8px;
-  border: #ffffff solid 1px;
-  border-bottom: none;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-
-form>button {
-  margin: 1rem 1rem;
-  width: 90%;
-}
-
-legend[align=center] {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.3rem;
-  color: white;
-  text-align: center;
-}
-
-.reservation-section>article>form>fieldset>fieldset{
-  border-radius: 16px;
-  padding-top: 0.5rem;
-  margin: 0 1rem;
-  height: 60%;
-}
-.reservation-section>article>form>fieldset>fieldset>legend{
-  margin-left: 0.3rem;
-  font-size: 1rem;
-}
-.reservation-section>article>form>fieldset>fieldset>div{
-  font-size: 1.2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1rem;
-  margin-bottom: 1.3rem;
-  justify-items: center;
+  .reservation-section>[aria-label=home_icon] {
+    border: none;
+  }
+  .reservation-section>a{
+    grid-row: 1/span 1;
+    position: absolute;
+    top:8%;
+    left: 9%;
+    border-radius: 16px;
+    z-index: 1;
+    height: 3vh;
+    width: 9vw;
+    color: #dfd672;
+    
+    
+  }
   
-}
+  
 
-[for='standard'], [for='outside']{
-  display: block;
-  width: 100%;
-  text-align: center;
-}
+  .reservation-section>article>h3 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
 
-/* ----------------------------login--------------------------- */
+  }
 
-.login-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, 1fr);
-  background-color: #495e57;
-  color: #dfd672;
-  /* width: 100%; */
-  height: 70vh;
-  border-radius: 16px;
-  margin:  0rem;
-  margin-top: 0;
-  padding: 0rem;
-  /* justify-content: center; */
-  justify-items: center;
-}
+  .reservation-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 2/ span 9;
+    width: 110%;
+  }
 
-.login-section>object {
-  position: fixed;
-  top: 0%;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  color: #dfd672;
-}
+  .reservation-section>article>form {
+    height: 100%;
+    /* display: grid; */
+  }
 
-.login-section>article>h3{
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 0.7rem;
+  .reservation-section>article>form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 0.1rem 0.1rem;
+    height: 65%;
+    row-gap: 0.3rem;
+  }
 
-}
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.5fr 0.8fr;
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
 
-.login-section>article {
-  /* grid-column: 5/ span 6; */
-  grid-row: 1/ span 4;
-  width: 95%;
-}
+  #react-datepicker {
+    width: 75%;
+    height: 1.7rem;
+    border-radius: 8px;
+    border: none;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 
-form {
-  height: 100%;
-  /* display: grid; */
-}
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 
- form>fieldset {
-  display: grid;
-  grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
-  border-radius: 16px;
-  padding: 1rem 1rem;
-  height: 80%;
-  row-gap: 2rem;
-}
 
-.login-section>article>form>fieldset{
-  row-gap: 0.2rem;
-}
+  form>button {
+    margin: 1rem 1rem;
+    width: 90%;
+  }
 
-fieldset>#input {
-  display: grid;
-  grid-template-rows: 0.1fr 0.6fr;
-  font-size: 1rem;
-}
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+  }
 
-#input>input,
-#input>select {
-  border-radius: 8px;
-  border: #ffffff solid 1px;
-  border-bottom: none;
-  /* text-align: center; */
-  padding: 0 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-}
+  .reservation-section>article>form>fieldset>fieldset {
+    border-radius: 16px;
+    padding-top: 0.5rem;
+    margin: 0 1rem;
+    height: 60%;
+  }
 
-#input>input:active, #input>select:focus{
-  border: #F4CE14 solid 2px;;
-}
+  .reservation-section>article>form>fieldset>fieldset>legend {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+  }
 
-form>a {
+  .reservation-section>article>form>fieldset>fieldset>div {
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1rem;
+    margin-bottom: 1.3rem;
+    justify-items: center;
 
-  background-color: #F4CE14;
-  text-decoration: none;
-  text-align: center;
-  display: grid;
-  grid-row: 9/ span 10;
-  padding: 0.6rem 0rem;
-  /* margin-right: 5rem; */
-  border-radius: 16px;
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  color: black;
-  border-style: none;
-  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 1rem;
-  width: 100%;
-}
+  }
 
-form>a:hover{
-  text-decoration: none
-}
+  [for='standard'],
+  [for='outside'] {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 
-legend[align=center] {
-  font-family: 'Markazi Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-}
+  /* ----------------------------login--------------------------- */
+
+  .login-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: #495e57;
+    color: #dfd672;
+    /* width: 100%; */
+    height: 70vh;
+    border-radius: 16px;
+    margin: 0rem;
+    margin-top: 0;
+    padding: 0rem;
+    /* justify-content: center; */
+    justify-items: center;
+  }
+
+  .login-section>object {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    color: #dfd672;
+  }
+
+  .login-section>article>h3 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 0.7rem;
+
+  }
+
+  .login-section>article {
+    /* grid-column: 5/ span 6; */
+    grid-row: 1/ span 4;
+    width: 95%;
+  }
+
+  form {
+    height: 100%;
+    /* display: grid; */
+  }
+
+  form>fieldset {
+    display: grid;
+    grid-template-rows: 4rem 4rem 4rem 4rem 10rem;
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    height: 80%;
+    row-gap: 2rem;
+  }
+
+  .login-section>article>form>fieldset {
+    row-gap: 0.2rem;
+  }
+
+  fieldset>#input {
+    display: grid;
+    grid-template-rows: 0.1fr 0.6fr;
+    font-size: 1rem;
+  }
+
+  #input>input,
+  #input>select {
+    border-radius: 8px;
+    border: #ffffff solid 1px;
+    border-bottom: none;
+    /* text-align: center; */
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  #input>input:active,
+  #input>select:focus {
+    border: #F4CE14 solid 2px;
+    ;
+  }
+
+  form>a {
+
+    background-color: #F4CE14;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    grid-row: 9/ span 10;
+    padding: 0.6rem 0rem;
+    /* margin-right: 5rem; */
+    border-radius: 16px;
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    border-style: none;
+    box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  form>a:hover {
+    text-decoration: none
+  }
+
+  legend[align=center] {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+  }
 
 
 
