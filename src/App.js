@@ -6,6 +6,8 @@ import Main from './Components/Main';
 import ReserveTable from './Components/Reservations'
 import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Login';
+import PersonalInfo from './Components/PersonalInfo';
+import ConfirmationPage from './Components/ConfirmationPage';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <Header />
         <Routes>
           <Route path='/' element={<Main />}/>
-          <Route path='/reservations' element={<ReserveTable/>}/>
+          <Route path='/reservations' element={<ReserveTable/>}></Route>
+          <Route path='/reservations/personal-information' element={<PersonalInfo/>}/>
+          <Route path='/reservations/personal-information/confirmation' element={<ConfirmationPage/>}/>
           <Route path='/login' element={<Login/>} />
         </Routes>
       <Footer />

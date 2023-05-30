@@ -14,6 +14,14 @@ function Header() {
   } else {
     styl = { gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr' };
   }
+var confirmationNav
+  if(pathRef === '/reservations/personal-information/confirmation'){
+    confirmationNav= { display: 'none'};
+  }else{
+    confirmationNav= {display: 'block'};
+
+  }
+
 
   const [NavLinks, setNavLinks] = useState(['About', 'Menu', 'Testimonials']);
 
@@ -60,7 +68,7 @@ function Header() {
       <header>
         <img aria-label="hamburger_icon" width={'30%'} src={hamburgerIcon} alt="hamburger-icon" onClick={handleHamClick} className={`hamburger ${hamClick ? 'active' : ''}`} />
         <img src={require('../assets/logos/Asset 16@4x.png')} width={200} alt="little-lemon logo" />
-        <nav className={classChange}>
+        <nav className={classChange} style={confirmationNav}>
           <ul style={styl}>
             <li>
               <Link to="/" onClick={() => setHamClick(false)}>Home</Link>

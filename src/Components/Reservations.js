@@ -28,9 +28,11 @@ function ReserveTable() {
         <article>
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
-          <form onClick={(e) => { e.preventDefault(); }}>
+          <form onClick={(e) => { e.preventDefault(); }} >
+              Find a Table for any occasion
             <fieldset>
-              <legend align="center">Table reservation Information </legend>
+              <legend align="center">Table Reservation Information </legend>
+
 
               <div id='input'>
                 <label htmlFor='date' id='date' className='input-label'>
@@ -40,8 +42,9 @@ function ReserveTable() {
                   selected={date}
                   onChange={date => setDate(date)}
                   minDate={new Date()}
-                  placeholderText='dd-mm-yyyy'
-                  dateFormat={'dd/MMMM/yyyy'}
+                  placeholderText='dd   /   mm   /   yyyy'
+                  dateFormat={'dd   /   MMMM   /   yyyy'}
+                  disabledKeyboardNavigation
                   id='react-datepicker' />
               </div>
 
@@ -52,13 +55,13 @@ function ReserveTable() {
                 </label>
 
                 <select defaultValue={'07:00 PM'} id='timmings'>
-                  <option defaultChecked value="05:00 PM">05:00 PM</option>
-                  <option value="06:00 PM">06:00 PM</option>
-                  <option value="07:00 PM">07:00 PM</option>
-                  <option value="08:00 PM">08:00 PM</option>
-                  <option value="09:00 PM">09:00 PM</option>
-                  <option value="10:00 PM">10:00 PM</option>
-                  <option value="11:00 PM">11:00 PM</option>
+                  <option value="05:00 PM">05 : 00  PM</option>
+                  <option value="06:00 PM">06 : 00  PM</option>
+                  <option value="07:00 PM">07 : 00  PM</option>
+                  <option value="08:00 PM">08 : 00  PM</option>
+                  <option value="09:00 PM">09 : 00  PM</option>
+                  <option value="10:00 PM">10 : 00  PM</option>
+                  <option value="11:00 PM">11 : 00  PM</option>
                 </select>
               </div>
 
@@ -115,7 +118,7 @@ function ReserveTable() {
               </fieldset>
 
             </fieldset>
-            <Link type='submit' to='personal-information' >Enter Personal Details</Link>
+            <Link type='submit' to={'personal-information'} >Enter Personal Details</Link>
           </form>
         </article>
       </section>
