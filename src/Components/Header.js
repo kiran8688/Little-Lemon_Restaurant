@@ -18,7 +18,7 @@ var confirmationNav
   if(pathRef === '/reservations/personal-information/confirmation'){
     confirmationNav= { display: 'none'};
   }else{
-    confirmationNav= {display: 'block'};
+    confirmationNav= {};
 
   }
 

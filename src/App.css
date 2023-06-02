@@ -475,7 +475,7 @@ rect {
   border: none;
 }
 
-.reservation-section>a{
+.reservation-section>a {
   grid-row: 1/span 1;
   position: fixed;
   left: 2%;
@@ -484,7 +484,7 @@ rect {
   height: 5vh;
   width: 2vw;
   color: #dfd672;
-  
+
 }
 
 .reservation-section>article>h3 {
@@ -499,8 +499,9 @@ rect {
 
 .reservation-section>article {
   grid-column: 2/ span 2;
-  grid-row: 2/ span 9;
+  grid-row: 2/ span 10;
   width: 30%;
+  padding-bottom: 5rem;
 }
 
 form {
@@ -521,6 +522,10 @@ fieldset>#input {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   font-size: 1.2rem;
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 500;
+/* font-size: 18px; */
 }
 
 
@@ -532,6 +537,10 @@ fieldset>#input {
   /* text-align: center; */
   padding: 0 2rem;
   background-color: rgba(255, 255, 255, 0.8);
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
 }
 
 #react-datepicker {
@@ -541,6 +550,10 @@ fieldset>#input {
   border: none;
   padding: 0 2rem;
   background-color: rgba(255, 255, 255, 0.8);
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
 }
 
 #input>input:active,
@@ -593,6 +606,9 @@ legend[align=center] {
 .reservation-section>article>form>fieldset>fieldset>legend {
   margin-left: 2rem;
   font-size: 1.2rem;
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 600;
 }
 
 .reservation-section>article>form>fieldset>fieldset>div {
@@ -602,6 +618,10 @@ legend[align=center] {
   grid-template-rows: 1fr;
   margin-bottom: 1.3rem;
   justify-items: center;
+  font-size: 1.2rem;
+  font-family: 'Karla';
+font-style: normal;
+font-weight: 500;
 
 }
 
@@ -704,18 +724,18 @@ legend[align=center] {
   row-gap: 2rem;
 }
 
-textarea{
+textarea {
   max-width: 23vw;
   background-color: rgba(255, 255, 255, 0.7);
   max-height: 4vw;
   min-height: 2vw;
   min-width: 20vw;
   border-radius: 8px;
-  padding-inline: 2rem 2rem ;
+  padding-inline: 2rem 2rem;
   font-size: 1rem;
 }
 
-.personal-section>a{
+.personal-section>a {
   grid-row: 1/span 1;
   position: fixed;
   left: 2%;
@@ -724,7 +744,7 @@ textarea{
   height: 5vh;
   width: 2vw;
   color: #dfd672;
-  
+
 }
 
 .personal-section>article>h3 {
@@ -743,8 +763,102 @@ textarea{
   width: 30%;
 }
 
+/* --------------------------------------confirmation------------------------------------- */
 
+.confirmation-section>article:nth-child(1) {
+  background-image: url(../src/assets/icons_assets/restaurant.jpg);
+  height: 5vw;
+  padding: 8rem 0 8rem;
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  margin: 1rem;
+  border-radius: 16px;
+}
 
+.confirmation-section>article>h1 {
+  display: inline;
+  padding: 0.3rem;
+  border-radius: 16px;
+  color: #F4CE14;
+  background-color: #495e57ef;
+  text-shadow: -1px -2.2px 2px #ffffffd2;
+
+}
+
+.confirmation-section>article>h3 {
+  text-align: center;
+  font-family: 'Markazi Text';
+  color: #495e57;
+  text-shadow: -1px -1px 1px #F4CE14;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.1rem;
+}
+
+.confirmation-section>article:nth-child(2) {
+  display: grid;
+  grid-template-columns: 400px;
+  grid-template-rows: 0.2fr 1fr 1fr 0.1fr;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.confirmation-section>article>div {
+  border-bottom: 2px solid #495e57;
+  padding: 1rem;
+  align-items: center;
+  justify-content: stretch;
+  display: grid;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+  row-gap: 1rem;
+}
+
+.confirmation-section>article>div>h4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.confirmation-section>article>div>h4>span {
+  justify-self: end;
+  align-content: center;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+}
+
+.confirmation-section>article>a {
+  background-color: #F4CE14;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem 0rem;
+  border-radius: 16px;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  border-style: none;
+  box-shadow: 0px 9px 10px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.confirmation-section>article>div>h4>span>img {
+  margin: -0.1rem 0;
+  color: #495e57;
+}
 
 
 /* -------------------------------------------------------------- */
@@ -775,11 +889,12 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  
-  .reservation-section>a{
+
+  .reservation-section>a {
     grid-row: 1/span 1;
     position: fixed;
     /* top: -50%; */
@@ -790,8 +905,8 @@ textarea{
     width: 3vw;
     min-width: 3vw;
     color: #dfd672;
-    
-    
+
+
   }
 
   .personal-section {
@@ -809,12 +924,12 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 6rem;
@@ -823,30 +938,30 @@ textarea{
     height: 80%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  textarea {
     max-width: 45vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 6vw;
     min-height: 4vw;
     min-width: 20vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
     position: fixed;
     left: 2%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 5vh;
     width: 5vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -854,16 +969,16 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 2/ span 2;
     grid-row: 2/ span 9;
     width: 60%;
   }
 
-  
+
 
 
 }
@@ -893,12 +1008,12 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  
-  .reservation-section>a{
+
+  .reservation-section>a {
     grid-row: 1/span 1;
     position: fixed;
     /* top: -50%; */
@@ -909,9 +1024,9 @@ textarea{
     width: 5vw;
     min-width: 5vw;
     color: #dfd672;
-    
+
   }
-  
+
 
   /* ---------------------------login--------------------------- */
 
@@ -1030,7 +1145,8 @@ textarea{
     color: white;
     text-align: center;
   }
-/* -------------------------------------------------personal------------------------------------------- */
+
+  /* -------------------------------------------------personal------------------------------------------- */
   .personal-section {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -1046,12 +1162,12 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 8rem;
@@ -1060,30 +1176,30 @@ textarea{
     height: 110%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  textarea {
     max-width: 50.5vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 6vw;
     min-height: 4vw;
     min-width: 20vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
-    position: fixed;
+    position: absolute;
     left: 2%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 5vh;
     width: 5vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -1091,17 +1207,17 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 2/ span 2;
     grid-row: 2/ span 9;
     width: 60%;
   }
-  
-  
-  
+
+
+
 
 
 
@@ -1137,6 +1253,7 @@ textarea{
 
   .navbar {
     display: none;
+    
   }
 
   .navbar.active {
@@ -1579,26 +1696,27 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  .reservation-section>a{
-    
+
+  .reservation-section>a {
+
     grid-row: 1/span 1;
     position: absolute;
     top: 10%;
     left: 5%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 8vw;
     min-width: 50px;
     color: #dfd672;
-    
+
   }
-  
-  
+
+
 
   .reservation-section>article>h3 {
     font-family: 'Markazi Text';
@@ -1906,6 +2024,7 @@ textarea{
     color: white;
     text-align: center;
   }
+
   .personal-section {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -1921,12 +2040,12 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 8rem;
@@ -1935,30 +2054,31 @@ textarea{
     height: 110%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  textarea {
     max-width: 41vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 10vw;
     min-height: 4vw;
     min-width: 10vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
-    position: fixed;
-    left: 6%;
+    position: absolute;
+    left: 5%;
+    top: 10%;
     border-radius: 16px;
-    z-index: 1;
-    height: 5vh;
-    width: 5vw;
+    z-index: 0;
+    height: 3vh;
+    width: 10vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -1966,15 +2086,39 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 2/ span 2;
     grid-row: 2/ span 9;
-    width: 60%;
+    width: 90%;
   }
 
+/* -------------------------------------confirmation--------------------------------------- */
+
+.confirmation-section>article:nth-child(1) {
+  background-image: url(../src/assets/icons_assets/restaurant.jpg);
+  height: 5vw;
+  padding: 8rem 0 8rem;
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  margin: 1rem;
+  border-radius: 16px;
+}
+
+.confirmation-section>article>h1 {
+  display: inline;
+  padding: 0.3rem;
+  border-radius: 16px;
+  color: #F4CE14;
+  background-color: #495e57ef;
+  text-shadow: -1px -2.2px 2px #ffffffd2;
+  font-size: 180%;
+
+}
 
 
 
@@ -2472,26 +2616,26 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  
-  .reservation-section>a{
+
+  .reservation-section>a {
     grid-row: 1/span 1;
     position: absolute;
     top: 8%;
     left: 8%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 7vw;
     color: #dfd672;
-    
-    
+
+
   }
-  
-  
+
+
 
   .reservation-section>article>h3 {
     font-family: 'Markazi Text';
@@ -2548,7 +2692,7 @@ textarea{
   }
 
 
-  form>button {
+  form>a {
     margin-top: 2rem;
     width: 100%;
   }
@@ -2707,7 +2851,8 @@ textarea{
     color: white;
     text-align: center;
   }
-/* -------------------------------------------personal------------------------------------------ */
+
+  /* -------------------------------------------personal------------------------------------------ */
   .personal-section {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -2718,50 +2863,52 @@ textarea{
     height: 100%;
     /* width: 90%; */
     border-radius: 16px;
-    margin: 1rem;
+    margin: 0rem;
     margin-top: 0;
-    padding: 1rem;
+    padding: 1rem 0rem;
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 8rem;
     border-radius: 16px;
     padding: 1rem 1rem;
+    width: 90%;
     height: 75%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  textarea {
     max-width: 44vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 10vw;
     min-height: 4vw;
     min-width: 10vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
-    position: fixed;
+    position: absolute;
     left: 6%;
+    top: 8%;
     border-radius: 16px;
-    z-index: 1;
-    height: 5vh;
-    width: 7vw;
+    z-index: 0;
+    height: 3vh;
+    width: 15vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -2769,15 +2916,38 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 2/ span 2;
     grid-row: 2/ span 9;
     width: 80%;
   }
 
+/* ---------------------------------------confirmation---------------------------------- */
+
+.confirmation-section>article:nth-child(1) {
+  background-image: url(../src/assets/icons_assets/restaurant.jpg);
+  height: 5vw;
+  padding: 8rem 0 8rem;
+  text-align: center;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  margin: 1rem;
+  border-radius: 16px;
+}
+
+.confirmation-section>article>h1 {
+  display: inline;
+  padding: 0.3rem;
+  border-radius: 16px;
+  color: #F4CE14;
+  background-color: #495e57ef;
+  text-shadow: -1px -2.2px 2px #ffffffd2;
+
+}
 
 
 
@@ -2811,24 +2981,25 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  .reservation-section>a{
+
+  .reservation-section>a {
     grid-row: 1/span 1;
-    position: fixed;
+    position: absolute;
     /* top: -50%; */
     left: 9%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 8vw;
     color: #dfd672;
-    
-    
+
+
   }
-  
+
   .reservation-section>article {
     width: 100%;
 
@@ -2846,18 +3017,18 @@ textarea{
     height: 100%;
     /* width: 90%; */
     border-radius: 16px;
-    margin: 1rem;
+    margin: 0rem;
     margin-top: 0;
-    padding: 1rem;
+    padding: 1rem 0rem;
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 8rem;
@@ -2866,31 +3037,31 @@ textarea{
     height: 75%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  textarea {
     max-width: 55vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 12vw;
     min-height: 4vw;
     min-width: 10vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
     position: absolute;
     left: 7%;
     top: 8%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 15vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -2898,13 +3069,13 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 2/ span 2;
     grid-row: 2/ span 9;
-    width: 100%;
+    width: 100vw;
   }
 
 
@@ -2930,25 +3101,26 @@ textarea{
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .reservation-section>[aria-label=home_icon] {
     border: none;
   }
-  .reservation-section>a{
+
+  .reservation-section>a {
     grid-row: 1/span 1;
     position: absolute;
-    top:8%;
+    top: 8%;
     left: 9%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 9vw;
     color: #dfd672;
-    
-    
+
+
   }
-  
-  
+
+
 
   .reservation-section>article>h3 {
     font-family: 'Markazi Text';
@@ -3179,18 +3351,18 @@ textarea{
     height: 100%;
     /* width: 90%; */
     border-radius: 16px;
-    margin: 1rem;
+    margin: 0rem;
     margin-top: 0;
-    padding: 1rem 0.1rem;
+    padding: 1rem 0rem;
     /* justify-content: center; */
     justify-items: center;
   }
-  
+
   .personal-section>[aria-label=home_icon] {
     /* top: -50%; */
     border: none;
   }
-  
+
   .personal-section>article>form>fieldset {
     display: grid;
     grid-template-rows: 4rem 4rem 4rem 4rem 4rem 8rem;
@@ -3199,31 +3371,33 @@ textarea{
     height: 75%;
     row-gap: 2rem;
   }
-  
-  textarea{
+
+  /* .personal-section>article>form>fieldset */
+
+  textarea {
     max-width: 55vw;
     background-color: rgba(255, 255, 255, 0.7);
     max-height: 12vw;
     min-height: 4vw;
     min-width: 10vw;
     border-radius: 8px;
-    padding-inline: 2rem 2rem ;
+    padding-inline: 2rem 2rem;
     font-size: 1rem;
   }
-  
-  .personal-section>a{
+
+  .personal-section>a {
     grid-row: 1/span 1;
     position: absolute;
     left: 7%;
     top: 8%;
     border-radius: 16px;
-    z-index: 1;
+    z-index: 0;
     height: 3vh;
     width: 15vw;
     color: #dfd672;
-    
+
   }
-  
+
   .personal-section>article>h3 {
     font-family: 'Markazi Text';
     font-style: normal;
@@ -3231,9 +3405,9 @@ textarea{
     font-size: 40px;
     color: white;
     padding-bottom: 0.7rem;
-  
+
   }
-  
+
   .personal-section>article {
     grid-column: 1/ span 2;
     grid-row: 2/ span 9;
